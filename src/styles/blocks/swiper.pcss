@@ -1,0 +1,46 @@
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  font-size: 36px;
+  width: fit-content;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  opacity: 1;
+  margin-right: 50px;
+  &:first-child {
+    &:after {
+      content: 'Лучшее предложение';
+    }
+  }
+  &:nth-child(2) {
+    &:after {
+      content: 'Новинки';
+    }
+  }
+  &:last-child {
+    margin-right: 0px;
+    &:after {
+      content: 'Рекомендуем';
+    }
+  }
+  @include phones {
+    font-size: 16px;
+    margin-right: 0px;
+  }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  &:after {
+    color: $bg-color;
+    text-decoration: underline;
+  }
+}
+
+.swiper-pagination {
+  top: 0;
+  text-align: left;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 95%;
+  width: fit-content;
+}

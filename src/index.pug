@@ -1,0 +1,501 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(http-equiv="Cache-Control" content="max-age=31536000, must-revalidate")
+    meta(name="description" content="Тестовая страница Monoteka")
+    link(href="https://img.icons8.com/pastel-glyph/64/000000/hearts.png" rel="shortcut icon" type="image/x-icon")
+    link(rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css")
+    title Monoteka | test page
+  body
+    .wrapper
+      .maincontent
+        header.header
+          .container
+            a.button.header__button(href="#") Каталог
+              .arrow.arrow-down
+            a.logo(href="#")
+              +image('content/logo.png', 'logo-pic', 'Логотип')
+            nav.menu
+              a.menu__item.menu__item--company(href="#") Компания
+              a.menu__item.menu__item--news(href="#") Новости
+              a.menu__item.menu__item--logistics(href="#") Поставщикам
+              a.menu__item.menu__item--contacts(href="#") Контакты
+              a.menu__item.menu__item--cabinet(href="#") Кабинет
+            a.header__search
+              +icon('search', 'header__search_icon')
+            a.header__basket
+              +icon('basket', 'header__basket_icon')
+        section.catalog
+          .container
+            .swiper-container.catalog__slider
+              ul.catalog__list.swiper-wrapper
+                li.catalog__item.swiper-slide
+                  h1.catalog__item_title Monoteka-group - лучшие моменты жизни вместе с нашими платьями
+                  a.button.button--catalog(href="#") Купить
+                li.catalog__item.catalog__item--safety.swiper-slide
+                  h2.catalog__item_title Monoteka-group - за безопасность
+                  a.button.button--catalog(href="#") Купить
+                li.catalog__item.catalog__item--fashion.swiper-slide
+                  h2.catalog__item_title Monoteka-group - за самовыражение
+                  a.button.button--catalog(href="#") Купить
+              .catalog__arrow.catalog__arrow--left
+                .arrow.arrow-left
+              .catalog__arrow.catalog__arrow--right
+                .arrow.arrow-right
+            .catalog__sidebar
+              .catalog__preview.catalog__preview--jackets
+                span.catalog__preview_title Пиджаки
+                a.page-link(href="#") В наших магазинах
+              .catalog__preview.catalog__preview--buisness
+                span.catalog__preview_title Деловой стиль
+                a.page-link(href="#") Узнать больше
+          .container
+            ul.catalog__goods
+              li.catalog__goods_block
+                a.catalog__goods_item(href="#")
+                  +icon('cat1', 'catalog__goods_icon')
+                  span.catalog__goods_text Платья
+              li.catalog__goods_block
+                a.catalog__goods_item(href="#")
+                  +icon('cat2', 'catalog__goods_icon')
+                  span.catalog__goods_text Шубы
+              li.catalog__goods_block
+               a.catalog__goods_item(href="#")
+                  +icon('cat3', 'catalog__goods_icon')
+                  span.catalog__goods_text Пиджаки
+              li.catalog__goods_block
+                a.catalog__goods_item(href="#")
+                  +icon('cat4', 'catalog__goods_icon')
+                  span.catalog__goods_text Блузки
+              li.catalog__goods_block
+                a.catalog__goods_item(href="#")
+                  +icon('cat5', 'catalog__goods_icon')
+                  span.catalog__goods_text Джинсы
+              li.catalog__goods_block
+                a.catalog__goods_item(href="#")
+                  +icon('cat6', 'catalog__goods_icon')
+                  span.catalog__goods_text Рубашки
+        section.product
+          .container
+            .swiper-product.product__slider
+              .product__arrow.product__arrow--left
+                .arrow.arrow-left
+              .product__arrow.product__arrow--right
+                .arrow.arrow-right
+              .swiper-pagination
+              ul.product__list.swiper-wrapper
+                li.product__item.swiper-slide
+                  ul.product__goods 
+                    li.product__goods_item
+
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--one
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Кожа
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Кожаная юбка
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--two
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--italy
+                          .product__goods_tag sale
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Италия
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Платье в горох с поясом
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_sub 1190р.
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--three
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Розовое платье
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--four
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Шерсть
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Зима
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Полосатая кофта
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                li.product__item.swiper-slide
+                  ul.product__goods 
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--one
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Кожа
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Кожаная юбка2
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--two
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--italy
+                          .product__goods_tag sale
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Италия
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Платье в горох с поясом2
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_sub 1190р.
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--three
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Розовое платье2
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--four
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Шерсть
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Зима
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Полосатая кофта2
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                li.product__item.swiper-slide
+                  ul.product__goods 
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--one
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Кожа
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Кожаная юбка3
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--two
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--italy
+                          .product__goods_tag sale
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Италия
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Платье в горох с поясом3
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_sub 1190р.
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--three
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Хлопок
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Лето
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Мини
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Розовое платье3
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                            li.product__goods_sizes_item 46
+                            li.product__goods_sizes_item 48
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    li.product__goods_item
+                      .product__goods_visual
+                        .product__goods_bg.product__goods_bg--four
+                        .product__goods_visual_top
+                          .product__goods_flag.product__goods_flag--france
+                          .product__goods_tag new
+                        table.product__goods_table(bordercolor="#ffffff" border="1")
+                          tr
+                            td.product__goods_td.product__goods_td--left Материал
+                            td.product__goods_td.product__goods_td--right Шерсть
+                          tr
+                            td.product__goods_td.product__goods_td--left Сезон
+                            td.product__goods_td.product__goods_td--right Зима
+                          tr
+                            td.product__goods_td.product__goods_td--left Страна-производитель
+                            td.product__goods_td.product__goods_td--right Франция
+                          tr
+                            td.product__goods_td.product__goods_td--left Длина
+                            td.product__goods_td.product__goods_td--right Стандарт
+                        a.page-link(href="#") Перейти в карточку
+                      span.product__goods_item_title Полосатая кофта3
+                      p.product__goods_item_text Описание: Полосатая кофта из полосатого трикотажа, без молнии
+                      .product__goods_footer
+                        .product__goods_sizes
+                          ul.product__goods_sizes_list
+                            li.product__goods_sizes_item 44
+                          span.product__goods_sizes_text Размер
+                        .product__goods_sizes_basket
+                          .product__goods_sizes_price
+                            span.product__goods_sizes_cost 790р.
+                          a.product__goods_sizes_button(href="#")
+                            +icon('basket', 'product__goods_icon')
+                    
+    script(src="https://unpkg.com/swiper/js/swiper.min.js")
+
+        

@@ -1,0 +1,77 @@
+.header {
+  padding: 22px 0;
+  position: relative;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
+  & .container {
+    display: flex;
+    @include medium {
+      display: grid;
+      position: relative;
+    }
+    @include phones {
+      grid-template-areas: "logo logo logo"
+      "menu menu menu"
+      "catalog search basket";
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    cursor: pointer;
+    &_icon {
+      width: 19px;
+      height: 19px;
+      fill: $text-color;
+      transition: all 0.3s;
+    }
+    &:hover .header__search_icon {
+      fill: $bg-color;
+    }
+    @include medium {
+      position: absolute;
+      top: 0;
+      right: 50px;
+      margin-left: 0px;
+    }
+    @include phones {
+      position: static;
+      top: 0;
+      right: 0;
+      grid-area: search;
+    }
+  }
+  &__basket {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    cursor: pointer;
+    &_icon {
+      width: 24px;
+      height: 24px;
+      fill: $text-color;
+      transition: all 0.3s;
+    }
+    &:hover .header__basket_icon {
+      fill: $bg-color;
+    }
+    @include medium {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      margin-left: 0px;
+    }
+    @include phones {
+      position: static;
+      top: 0;
+      right: 0;
+      grid-area: basket;
+    }
+  }
+  &__button {
+    @include phones {
+      grid-area: catalog;
+    }
+  }
+}

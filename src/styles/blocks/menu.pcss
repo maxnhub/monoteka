@@ -1,0 +1,53 @@
+.menu {
+  display: grid;
+  grid-template-areas: "company news . . . . logistics contacts cabinet";
+  width: 100%;
+  grid-template-columns: 11% 11% 11% 11% 11% 11% 11% 11% 11%;
+  align-content: center;
+  color: $text-color;
+  text-transform: uppercase;
+  &__item {
+    text-align: right;
+    transition: all 0.3s;
+    @include medium {
+      font-size: 18px;
+      text-align: center;
+    }
+    @include phones {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &--company {
+      grid-area: company;
+    }
+    &--news {
+      grid-area: news;
+    }
+    &--logistics {
+      grid-area: logistics;
+    }
+    &--contacts {
+      grid-area: contacts;
+    }
+    &--cabinet {
+      grid-area: cabinet;
+    }
+    &:hover {
+      color: $bg-color;
+    }
+  }
+  @include medium {
+    grid-template-areas: "company news logistics contacts cabinet";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding-top: 25px;
+  }
+  @include phones {
+    display: flex;
+    flex-direction: column;
+    grid-area: menu;
+    margin-bottom: 25px;
+  }
+}

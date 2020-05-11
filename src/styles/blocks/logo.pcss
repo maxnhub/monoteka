@@ -1,0 +1,23 @@
+.logo {
+  cursor: default;
+  position: absolute;
+  top: 26px;
+  left: 45%;
+  &-pic {
+    width: 155px;
+    height: 36px;
+  }
+  @include medium {
+    left: 165px;
+    top: 5px;
+    height: 100%;
+  }
+  @include phones {
+    position: static;
+    top: 0;
+    left: 0;
+    grid-area: logo;
+    height: 38px;
+    margin: 0 auto;
+  }
+}

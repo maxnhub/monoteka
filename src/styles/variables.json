@@ -1,0 +1,10 @@
+{
+  "text-color": "#000000",
+  "text-sec-color": "#ffffff",
+  "bg-color": "#ef7f1a",
+  "bp-desktop-hd": "1800px",
+  "bp-desktop": "1659px",
+  "bp-medium": "1200px",
+  "bp-tablets": "768px",
+  "bp-phones": "480px"
+}

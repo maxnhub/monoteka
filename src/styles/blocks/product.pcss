@@ -1,0 +1,239 @@
+.product {
+  & .container {
+    overflow: hidden;
+  }
+  &__list {
+    display: flex;
+  }
+  &__slider {
+    position: relative;
+    padding-top: 60px;
+    @include phones {
+      padding-top: 30px;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    &--left {
+      right: 150px;
+    }
+    &--right {
+      right: 50px;
+    }
+    @include phones {
+      display: none;
+    }
+  }
+  &__goods {
+    display: flex;
+    @include medium {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include tablets {
+      grid-template-columns: 1fr;
+    }
+    &_item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 10px 25px 10px;
+      color: $text-color;
+      transition: all 0.3s;
+      position: relative;
+      &:hover {
+        color: $text-sec-color;
+        background: rgba(51, 51, 51, 0.8);
+      }
+      &:hover .product__goods_visual .page-link {
+        visibility: visible;    
+      }
+      &:hover .product__goods_table {
+        visibility: visible;    
+      }
+      &_title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      &_text {
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 15px;
+      }
+    }
+    &_bg {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      &--one {
+        background: url('../images/content/item1.png') 0 0/cover no-repeat;
+      }
+      &--two {
+        background: url('../images/content/item2.png') 0 0/cover no-repeat;
+      }
+      &--three {
+        background: url('../images/content/item3.png') 0 0/cover no-repeat;
+      }
+      &--four {
+        background: url('../images/content/item4.png') 0 0/cover no-repeat;
+      }
+    }
+    &_visual {
+      padding: 50px 0 90px;     
+      margin-bottom: 20px;
+      position: relative;
+      &_top {
+        padding-left: 20px;
+        margin-bottom: 80px;
+      }
+      & .page-link {
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &_flag {
+      margin-left: 20px;
+      height: 12px;
+      width: 7px;
+      background: #fff;
+      position: relative;
+      margin-bottom: 20px;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -7px;
+        height: 12px;
+        width: 7px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -7px;
+        height: 12px;
+        width: 7px;
+      }
+      &--france {
+        &:after {
+          background: #ff1f00;
+        }
+        &:before {
+          background: #4441e2;
+        }
+      }
+      &--italy {
+        &:after {
+          background: #ff1f00;
+        }
+        &:before {
+          background: #009246;
+        }
+      }
+    }
+    &_tag {
+      color: $text-sec-color;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: #000;
+      width: fit-content;
+    }
+    &_table {
+      width: 100%; /* Ширина таблицы */
+      background: transparent; /* Цвет фона таблицы */
+      color: #8b8b8b; /* Цвет текста */
+      border-spacing: 1px; /* Расстояние между ячейками */
+      margin-bottom: 90px;
+      border-collapse: collapse;
+      visibility: hidden;
+    }
+    &_td {
+      padding: 10px 10px 15px 10px;
+      width: 50%;
+      &--right {
+        text-align: right;
+        color: #fff;
+      }
+    }
+    &_footer {
+      display: flex;
+      justify-content: space-between;
+    }
+    &_sizes {
+      &_list {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      &_item {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        padding: 2px 10px;
+        border-radius: 5px;
+        border: 1px solid #bababa;
+        color: #bababa;
+        margin-right: 5px;
+        &:first-child {
+          color: $bg-color;
+          border: 1px solid $bg-color;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      &_text {
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      &_basket {
+        display: flex;
+        padding-right: 20px;
+        align-items: center;
+        @include tablets {
+          padding-right: 0;
+        }
+      }
+      &_price {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+      &_cost {
+        font-size: 36px;
+        font-weight: bold;
+        @include phones {
+          font-size: 24px;
+        }
+      }
+      &_sub {
+        font-size: 36px;
+        color: #bababa;
+        text-decoration: line-through;
+        margin-bottom: 5px;
+        @include phones {
+          font-size: 24px;
+        }
+      }
+      &_button {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &_icon {
+      width: 25px;
+      height: 25px;
+      fill: $bg-color;
+    }
+  }
+}
